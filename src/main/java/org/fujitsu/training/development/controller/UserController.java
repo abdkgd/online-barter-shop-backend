@@ -2,6 +2,7 @@ package org.fujitsu.training.development.controller;
 
 import java.util.List;
 
+import org.fujitsu.training.development.DTO.LoginResponse;
 import org.fujitsu.training.development.model.User;
 import org.fujitsu.training.development.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,11 @@ public class UserController {
 		return userService.getAllUser();
 	}
 	
+	@GetMapping(path = "/userpass")
+	public List<LoginResponse> showUsernameAndPassword(){
+		return userService.getLoginResponse();
+	}
+	
 	@GetMapping(path = "/{id}")
 	public User showUser(@PathVariable Integer id) {
 		return userService.getUserById(id);
@@ -45,4 +51,6 @@ public class UserController {
 	public String deleteUser(@PathVariable Integer id) {
 		return userService.deleteUser(id);
 	}
+	
+	
 }

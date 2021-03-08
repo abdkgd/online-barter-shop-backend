@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.fujitsu.training.development.DTO.LoginResponse;
 import org.fujitsu.training.development.model.User;
 import org.fujitsu.training.development.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Service
 public class UserService {
@@ -52,5 +54,10 @@ public class UserService {
 		oldUser.setRating(u.getRating());
 		oldUser.setUsername(u.getUsername());
 		return userRepository.save(oldUser);
+	}
+	
+	@GetMapping
+	public List<LoginResponse> getLoginResponse(){
+		return userRepository.getUsernameAndPassword();
 	}
 }
