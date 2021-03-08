@@ -1,6 +1,6 @@
 package org.fujitsu.training.development.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -76,15 +76,15 @@ public class Item {
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMMM dd, yyyy")
 	@Column(name = "publish_date")
-	private LocalDateTime publishDate;
+	private LocalDate publishDate;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMMM dd, yyyy")
 	@Column(name = "tade_end_data")
-	private LocalDateTime tradeEndDate;
+	private LocalDate tradeEndDate;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMMM dd, yyyy")
 	@Column(name = "update_date")
-	private LocalDateTime updateDate;
+	private LocalDate updateDate;
 	
 	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
 	@Column(name = "receiver_id")
@@ -162,27 +162,27 @@ public class Item {
 		this.itemSpecification = itemSpecification;
 	}
 
-	public LocalDateTime getPublishDate() {
+	public LocalDate getPublishDate() {
 		return publishDate;
 	}
 
-	public void setPublishDate(LocalDateTime publishDate) {
+	public void setPublishDate(LocalDate publishDate) {
 		this.publishDate = publishDate;
 	}
 
-	public LocalDateTime getTradeEndDate() {
+	public LocalDate getTradeEndDate() {
 		return tradeEndDate;
 	}
 
-	public void setTradeEndDate(LocalDateTime tradeEndDate) {
+	public void setTradeEndDate(LocalDate tradeEndDate) {
 		this.tradeEndDate = tradeEndDate;
 	}
 
-	public LocalDateTime getUpdateDate() {
+	public LocalDate getUpdateDate() {
 		return updateDate;
 	}
 
-	public void setUpdateDate(LocalDateTime updateDate) {
+	public void setUpdateDate(LocalDate updateDate) {
 		this.updateDate = updateDate;
 	}
 
