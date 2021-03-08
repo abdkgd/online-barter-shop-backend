@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
 	
-	@Query(value = "select new org.fujitsu.training.development.DTO.LoginResponse(u.username, u.password) from usertbl as u")
-	List<LoginResponse> getUsernameAndPassword();
+	@Query(value = "select new org.fujitsu.training.development.DTO.LoginResponse(u.username) from usertbl as u")
+	List<LoginResponse> getUsername();
 }

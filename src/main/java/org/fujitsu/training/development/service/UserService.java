@@ -57,7 +57,7 @@ public class UserService {
 	}
 	
 	@GetMapping
-	public List<LoginResponse> getLoginResponse(){
-		return userRepository.getUsernameAndPassword();
+	public List<LoginResponse> getCheckUsername(){
+		return userRepository.getUsername();
 	}
 }
