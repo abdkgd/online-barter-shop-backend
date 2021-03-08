@@ -38,9 +38,9 @@ public class Item {
 	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
 	private int id;
 	
-//	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
-//	@Column(name = "owner_id")
-//	private int ownerId;
+	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
+	@Column(name = "owner_id")
+	private int ownerId;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING)
 	@Column(name = "description")
@@ -192,6 +192,14 @@ public class Item {
 
 	public void setReceiverId(int receiverId) {
 		this.receiverId = receiverId;
+	}
+
+	public int getOwnerId() {
+		return ownerId;
+	}
+
+	public void setOwnerId(int ownerId) {
+		this.ownerId = ownerId;
 	}
 	
 	

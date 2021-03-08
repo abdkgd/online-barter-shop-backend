@@ -39,6 +39,10 @@ public class Comment {
 	@Column(name = "id")
 	private int id;
 	
+	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
+	@Column(name = "sender_id")
+	private int senderId;
+	
 	@JsonFormat(shape = JsonFormat.Shape.STRING)
 	@Column(name = "text")
 	private String text;
@@ -51,6 +55,7 @@ public class Comment {
 	@Column(name = "receiver_id")
 	private int receiverId;
 
+	
 	public int getId() {
 		return id;
 	}
@@ -83,9 +88,7 @@ public class Comment {
 		this.receiverId = receiverId;
 	}
 	
-//	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
-//	@Column(name = "sender_id")
-//	private int senderId;
+
 
 	
 }

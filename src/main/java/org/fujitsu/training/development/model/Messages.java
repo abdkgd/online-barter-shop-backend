@@ -1,6 +1,6 @@
 package org.fujitsu.training.development.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -44,12 +44,16 @@ public class Messages {
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMMM dd, yyyy")
 	@Column(name = "message_date")
-	private LocalDateTime messageDate;
+	private LocalDate messageDate;
 	
 	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
 	@Column(name = "receiver_id")
 	private int receiverId;
 
+	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
+	@Column(name = "sender_id")
+	private int senderId;
+	
 	public int getId() {
 		return id;
 	}
@@ -66,11 +70,11 @@ public class Messages {
 		this.text = text;
 	}
 
-	public LocalDateTime getMessageDate() {
+	public LocalDate getMessageDate() {
 		return messageDate;
 	}
 
-	public void setMessageDate(LocalDateTime messageDate) {
+	public void setMessageDate(LocalDate messageDate) {
 		this.messageDate = messageDate;
 	}
 
@@ -80,6 +84,14 @@ public class Messages {
 
 	public void setReceiverId(int receiverId) {
 		this.receiverId = receiverId;
+	}
+
+	public int getSenderId() {
+		return senderId;
+	}
+
+	public void setSenderId(int senderId) {
+		this.senderId = senderId;
 	}
 	
 	

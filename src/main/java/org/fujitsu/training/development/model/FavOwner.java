@@ -28,6 +28,10 @@ public class FavOwner {
 	@Column(name = "fav_owner_id")
 	private int favOwnerId;
 
+	@JsonFormat(shape = JsonFormat.Shape.STRING)
+	@Column(name = "owner_id")
+	private int ownerId;
+	
 	public int getId() {
 		return id;
 	}

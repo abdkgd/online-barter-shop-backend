@@ -1,15 +1,10 @@
 package org.fujitsu.training.development.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -73,28 +68,28 @@ public class User {
 	@Column(name = "profile_photo")
 	private String profilePhoto;
 	
-	@JsonFormat(shape = JsonFormat.Shape.ANY)
-	@OneToMany(targetEntity = Item.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "owner_id", referencedColumnName = "id")
-	private List<Item> items;
+//	@JsonFormat(shape = JsonFormat.Shape.ANY)
+//	@OneToMany(targetEntity = Item.class, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "owner_id", referencedColumnName = "id")
+//	private List<Item> items;
 	
-	@JsonFormat(shape = JsonFormat.Shape.ANY)
-	@OneToMany(targetEntity = Comment.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "sender_id", referencedColumnName = "id")
-	private List<Comment> comments;
+//	@JsonFormat(shape = JsonFormat.Shape.ANY)
+//	@OneToMany(targetEntity = Comment.class, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "sender_id", referencedColumnName = "id")
+//	private List<Comment> comments;
 	
-	@JsonFormat(shape = JsonFormat.Shape.ANY)
-	@OneToMany(targetEntity = Messages.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "sender_id", referencedColumnName = "id")
-	private List<Messages> messages;
+//	@JsonFormat(shape = JsonFormat.Shape.ANY)
+//	@OneToMany(targetEntity = Messages.class, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "sender_id", referencedColumnName = "id")
+//	private List<Messages> messages;
 	
-	@JsonFormat(shape = JsonFormat.Shape.ANY)
-	@OneToMany(targetEntity = FavItem.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "item_id", referencedColumnName = "id")
-	private List<FavItem> favItems;
+//	@JsonFormat(shape = JsonFormat.Shape.ANY)
+//	@OneToMany(targetEntity = FavItem.class, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "item_id", referencedColumnName = "id")
+//	private List<FavItem> favItems;
 	
-	@JsonFormat(shape = JsonFormat.Shape.ANY)
-	@OneToMany(targetEntity = FavOwner.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "owner_id", referencedColumnName = "id")
-	private List<FavOwner> favOwners;
+//	@JsonFormat(shape = JsonFormat.Shape.ANY)
+//	@OneToMany(targetEntity = FavOwner.class, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "owner_id", referencedColumnName = "id")
+//	private List<FavOwner> favOwners;
 }
