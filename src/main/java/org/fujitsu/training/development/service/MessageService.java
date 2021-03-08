@@ -40,7 +40,7 @@ public class MessageService {
 	}
 	
 	@Transactional
-	public Messages updateProduct(Messages m) {
+	public Messages updateMessage(Messages m) {
 		Messages oldMessage = messageRepository.findById(m.getId()).orElse(null);
 		oldMessage.setId(m.getId());
 		oldMessage.setMessageDate(m.getMessageDate());

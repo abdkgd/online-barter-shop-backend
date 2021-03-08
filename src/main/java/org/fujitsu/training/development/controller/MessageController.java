@@ -27,18 +27,18 @@ public class MessageController {
 	}
 	
 	@GetMapping(path = "/{id}")
-	public Messages showItem(@PathVariable Integer id) {
+	public Messages showMessage(@PathVariable Integer id) {
 		return messageService.getMessageById(id);
 	}
 	
 	@PostMapping
-	public Messages saveItem(@RequestBody Messages m) {
+	public Messages saveMessage(@RequestBody Messages m) {
 		return messageService.saveMessage(m);
 	}
 	
 	@PutMapping
-	public Messages updateMessages(@RequestBody Messages m) {
-		return messageService.updateProduct(m);
+	public Messages updateMessage(@RequestBody Messages m) {
+		return messageService.updateMessage(m);
 	}
 	
 	@DeleteMapping(path = "/{id}")

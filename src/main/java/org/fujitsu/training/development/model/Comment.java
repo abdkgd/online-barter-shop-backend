@@ -1,6 +1,6 @@
 package org.fujitsu.training.development.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -28,7 +28,7 @@ public class Comment {
 	@Id
 	@SequenceGenerator(
 			name = "commenttbl_seq",
-			sequenceName = "usertbl_seq",
+			sequenceName = "commenttbl_seq",
 			allocationSize = 1
 			)
 	@GeneratedValue(
@@ -49,7 +49,7 @@ public class Comment {
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMMM dd, yyyy")
 	@Column(name = "comment_date")
-	private LocalDateTime commentDate;
+	private LocalDate commentDate;
 	
 	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
 	@Column(name = "receiver_id")
@@ -72,11 +72,11 @@ public class Comment {
 		this.text = text;
 	}
 
-	public LocalDateTime getCommentDate() {
+	public LocalDate getCommentDate() {
 		return commentDate;
 	}
 
-	public void setCommentDate(LocalDateTime commentDate) {
+	public void setCommentDate(LocalDate commentDate) {
 		this.commentDate = commentDate;
 	}
 
@@ -87,8 +87,14 @@ public class Comment {
 	public void setReceiverId(int receiverId) {
 		this.receiverId = receiverId;
 	}
+
+	public int getSenderId() {
+		return senderId;
+	}
+
+	public void setSenderId(int senderId) {
+		this.senderId = senderId;
+	}
 	
-
-
 	
 }
