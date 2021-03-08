@@ -89,5 +89,111 @@ public class Item {
 	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
 	@Column(name = "receiver_id")
 	private int receiverId;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getPhotos() {
+		return photos;
+	}
+
+	public void setPhotos(String photos) {
+		this.photos = photos;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public String getIsTradeable() {
+		return isTradeable;
+	}
+
+	public void setIsTradeable(String isTradeable) {
+		this.isTradeable = isTradeable;
+	}
+
+	public String getItemSpecification() {
+		return itemSpecification;
+	}
+
+	public void setItemSpecification(String itemSpecification) {
+		this.itemSpecification = itemSpecification;
+	}
+
+	public LocalDateTime getPublishDate() {
+		return publishDate;
+	}
+
+	public void setPublishDate(LocalDateTime publishDate) {
+		this.publishDate = publishDate;
+	}
+
+	public LocalDateTime getTradeEndDate() {
+		return tradeEndDate;
+	}
+
+	public void setTradeEndDate(LocalDateTime tradeEndDate) {
+		this.tradeEndDate = tradeEndDate;
+	}
+
+	public LocalDateTime getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(LocalDateTime updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	public int getReceiverId() {
+		return receiverId;
+	}
+
+	public void setReceiverId(int receiverId) {
+		this.receiverId = receiverId;
+	}
+	
+	
 	
 }

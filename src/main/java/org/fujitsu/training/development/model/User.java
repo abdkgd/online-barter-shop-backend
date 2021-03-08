@@ -78,9 +78,23 @@ public class User {
 	@JoinColumn(name = "owner_id", referencedColumnName = "id")
 	private List<Item> items;
 	
-	
 	@JsonFormat(shape = JsonFormat.Shape.ANY)
 	@OneToMany(targetEntity = Comment.class, cascade = CascadeType.ALL)
 	@JoinColumn(name = "sender_id", referencedColumnName = "id")
 	private List<Comment> comments;
+	
+	@JsonFormat(shape = JsonFormat.Shape.ANY)
+	@OneToMany(targetEntity = Messages.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "sender_id", referencedColumnName = "id")
+	private List<Messages> messages;
+	
+	@JsonFormat(shape = JsonFormat.Shape.ANY)
+	@OneToMany(targetEntity = FavItem.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "item_id", referencedColumnName = "id")
+	private List<FavItem> favItems;
+	
+	@JsonFormat(shape = JsonFormat.Shape.ANY)
+	@OneToMany(targetEntity = FavOwner.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "owner_id", referencedColumnName = "id")
+	private List<FavOwner> favOwners;
 }

@@ -21,22 +21,21 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Table(name = "commenttbl")
-@Entity(name = "commenttbl")
-public class Comment {
+@Table(name = "messagetbl")
+@Entity(name = "messagetbl")
+public class Messages {
 
 	@Id
 	@SequenceGenerator(
-			name = "commenttbl_seq",
-			sequenceName = "usertbl_seq",
+			name = "messagetbl_seq",
+			sequenceName = "messagetbl_seq",
 			allocationSize = 1
 			)
 	@GeneratedValue(
 			strategy = GenerationType.SEQUENCE,
-			generator = "commenttbl_seq"
+			generator = "messagetbl_seq"
 			)
 	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
-	@Column(name = "id")
 	private int id;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING)
@@ -44,8 +43,8 @@ public class Comment {
 	private String text;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMMM dd, yyyy")
-	@Column(name = "comment_date")
-	private LocalDateTime commentDate;
+	@Column(name = "message_date")
+	private LocalDateTime messageDate;
 	
 	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
 	@Column(name = "receiver_id")
@@ -67,12 +66,12 @@ public class Comment {
 		this.text = text;
 	}
 
-	public LocalDateTime getCommentDate() {
-		return commentDate;
+	public LocalDateTime getMessageDate() {
+		return messageDate;
 	}
 
-	public void setCommentDate(LocalDateTime commentDate) {
-		this.commentDate = commentDate;
+	public void setMessageDate(LocalDateTime messageDate) {
+		this.messageDate = messageDate;
 	}
 
 	public int getReceiverId() {
@@ -83,9 +82,5 @@ public class Comment {
 		this.receiverId = receiverId;
 	}
 	
-//	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
-//	@Column(name = "sender_id")
-//	private int senderId;
-
 	
 }
