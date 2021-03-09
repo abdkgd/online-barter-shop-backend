@@ -5,11 +5,11 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.fujitsu.training.development.DTO.LoginResponse;
+import org.fujitsu.training.development.DTO.UsernameResponse;
 import org.fujitsu.training.development.model.User;
 import org.fujitsu.training.development.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @Service
 public class UserService {
@@ -23,6 +23,10 @@ public class UserService {
 	
 	public User getUserById(Integer id) {
 		return userRepository.findById(id).orElse(null);
+	}
+	
+	public User getUserByName(String name) {
+		return userRepository.findByUsername(name);
 	}
 	
 	@Transactional
@@ -56,8 +60,17 @@ public class UserService {
 		return userRepository.save(oldUser);
 	}
 	
-	@GetMapping
-	public List<LoginResponse> getCheckUsername(){
+	public List<UsernameResponse> getCheckUsername(){
 		return userRepository.getUsername();
+	}
+	
+	public Boolean getLogin(LoginResponse incoming){
+		List<LoginResponse> accounts = userRepository.getUsernameAndPassword();
+		for (LoginResponse loginAccounts : accounts) {
+			if(loginAccounts.getUsername().equals(incoming.getUsername()) && loginAccounts.getPassword().equals(incoming.getPassword())) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
