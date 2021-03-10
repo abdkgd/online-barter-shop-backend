@@ -47,10 +47,6 @@ public class Item {
 	private String description;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING)
-	@Column(name = "photos")
-	private String photos;
-	
-	@JsonFormat(shape = JsonFormat.Shape.STRING)
 	@Column(name = "category")
 	private String category;
 	
@@ -78,17 +74,13 @@ public class Item {
 	@Column(name = "publish_date")
 	private LocalDate publishDate;
 	
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMMM dd, yyyy")
-	@Column(name = "tade_end_data")
-	private LocalDate tradeEndDate;
+	@JsonFormat(shape = JsonFormat.Shape.STRING)
+	@Column(name = "photo")
+	private String photo;
 	
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMMM dd, yyyy")
-	@Column(name = "update_date")
-	private LocalDate updateDate;
-	
-	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
+	@JsonFormat(shape = JsonFormat.Shape.STRING)
 	@Column(name = "receiver_id")
-	private int receiverId;
+	private String receiverId;
 
 	public int getId() {
 		return id;
@@ -106,13 +98,6 @@ public class Item {
 		this.description = description;
 	}
 
-	public String getPhotos() {
-		return photos;
-	}
-
-	public void setPhotos(String photos) {
-		this.photos = photos;
-	}
 
 	public String getCategory() {
 		return category;
@@ -170,27 +155,19 @@ public class Item {
 		this.publishDate = publishDate;
 	}
 
-	public LocalDate getTradeEndDate() {
-		return tradeEndDate;
+	public String getPhoto() {
+		return photo;
 	}
 
-	public void setTradeEndDate(LocalDate tradeEndDate) {
-		this.tradeEndDate = tradeEndDate;
+	public void setPhoto(String photo) {
+		this.photo = photo;
 	}
 
-	public LocalDate getUpdateDate() {
-		return updateDate;
-	}
-
-	public void setUpdateDate(LocalDate updateDate) {
-		this.updateDate = updateDate;
-	}
-
-	public int getReceiverId() {
+	public String getReceiverId() {
 		return receiverId;
 	}
 
-	public void setReceiverId(int receiverId) {
+	public void setReceiverId(String receiverId) {
 		this.receiverId = receiverId;
 	}
 

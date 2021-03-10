@@ -49,13 +49,10 @@ public class ItemService {
 		oldItem.setItemSpecification(i.getItemSpecification());
 		oldItem.setLocation(i.getLocation());
 		oldItem.setOwnerId(i.getOwnerId());
-		oldItem.setPhotos(i.getPhotos());
 		oldItem.setPrice(i.getPrice());
 		oldItem.setPublishDate(i.getPublishDate());
 		oldItem.setReceiverId(i.getReceiverId());
 		oldItem.setStatus(i.getStatus());
-		oldItem.setTradeEndDate(i.getTradeEndDate());
-		oldItem.setUpdateDate(i.getUpdateDate());
 		return itemRepository.save(oldItem);
 	}
 }
