@@ -70,17 +70,13 @@ public class Item {
 	@Column(name = "item_specification")
 	private String itemSpecification;
 	
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MMMM dd, yyyy")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	@Column(name = "publish_date")
 	private LocalDate publishDate;
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING)
 	@Column(name = "photo")
 	private String photo;
-	
-	@JsonFormat(shape = JsonFormat.Shape.STRING)
-	@Column(name = "receiver_id")
-	private String receiverId;
 
 	public int getId() {
 		return id;
@@ -161,14 +157,6 @@ public class Item {
 
 	public void setPhoto(String photo) {
 		this.photo = photo;
-	}
-
-	public String getReceiverId() {
-		return receiverId;
-	}
-
-	public void setReceiverId(String receiverId) {
-		this.receiverId = receiverId;
 	}
 
 	public int getOwnerId() {

@@ -51,8 +51,8 @@ public class ItemService {
 		oldItem.setOwnerId(i.getOwnerId());
 		oldItem.setPrice(i.getPrice());
 		oldItem.setPublishDate(i.getPublishDate());
-		oldItem.setReceiverId(i.getReceiverId());
 		oldItem.setStatus(i.getStatus());
+		oldItem.setPhoto(i.getPhoto());
 		return itemRepository.save(oldItem);
 	}
 }
