@@ -54,6 +54,18 @@ public class Messages {
 	@Column(name = "sender_id")
 	private int senderId;
 	
+	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
+	@Column(name = "notification")
+	private int notification;
+	
+	public int getNotification() {
+		return notification;
+	}
+
+	public void setNotification(int notification) {
+		this.notification = notification;
+	}
+
 	public int getId() {
 		return id;
 	}

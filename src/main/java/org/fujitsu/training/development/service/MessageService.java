@@ -46,6 +46,7 @@ public class MessageService {
 		oldMessage.setMessageDate(m.getMessageDate());
 		oldMessage.setReceiverId(m.getReceiverId());
 		oldMessage.setText(m.getText());
+		oldMessage.setNotification(m.getNotification());
 		return messageRepository.save(oldMessage);
 	}
 }
