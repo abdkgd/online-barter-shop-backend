@@ -60,6 +60,10 @@ public class User {
 	@Column(name = "rating")
 	private int rating;
 	
+	@JsonFormat(shape = JsonFormat.Shape.NUMBER_INT)
+	@Column(name = "nrating")
+	private int nrating;
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING)
 	@Column(name = "phone_number")
 	private String phoneNumber;
@@ -140,7 +144,13 @@ public class User {
 		this.profilePhoto = profilePhoto;
 	}
 	
-	
+	public int getNrating() {
+		return nrating;
+	}
+
+	public void setNrating(int nrating) {
+		this.nrating = nrating;
+	}
 	
 //	@JsonFormat(shape = JsonFormat.Shape.ANY)
 //	@OneToMany(targetEntity = Item.class, cascade = CascadeType.ALL)

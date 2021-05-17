@@ -55,8 +55,9 @@ public class UserService {
 		oldUser.setPassword(u.getPassword());
 		oldUser.setPhoneNumber(u.getPhoneNumber());
 		oldUser.setProfilePhoto(u.getProfilePhoto());
-		oldUser.setRating(u.getRating());
 		oldUser.setUsername(u.getUsername());
+		oldUser.setRating(u.getRating());
+		oldUser.setNrating(u.getNrating());
 		return userRepository.save(oldUser);
 	}
 	
